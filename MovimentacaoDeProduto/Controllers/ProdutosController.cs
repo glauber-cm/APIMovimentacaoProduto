@@ -23,7 +23,7 @@ namespace MovimentacaoDeProduto.Controllers
             return Ok(produtos);
         }
 
-        // GET api/produtos/1
+        // GET: api/produtos/1
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

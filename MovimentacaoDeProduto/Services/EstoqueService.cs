@@ -23,10 +23,10 @@ namespace MovimentacaoDeProduto.Services
             if (produto == null)
                 return "Produto não encontrado";
 
-            if (dto.Tipo == "Saida" && produto.QuantidadeEstoque < dto.Quantidade)
+            if ((dto.Tipo == "Saida" || dto.Tipo == "saida") && produto.QuantidadeEstoque < dto.Quantidade)
                 return "Estoque insuficiente";
 
-            if(dto.Tipo == "Entrada")
+            if(dto.Tipo == "Entrada" || dto.Tipo == "entrada")
                 produto.QuantidadeEstoque += dto.Quantidade;
             else
                 produto.QuantidadeEstoque -= dto.Quantidade;
