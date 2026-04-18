@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovimentacaoDeProduto.DTOs;
 using MovimentacaoDeProduto.Entities;
 using MovimentacaoDeProduto.Models;
@@ -6,6 +7,7 @@ using MovimentacaoDeProduto.Services.Interface;
 
 namespace MovimentacaoDeProduto.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProdutosController : ControllerBase
