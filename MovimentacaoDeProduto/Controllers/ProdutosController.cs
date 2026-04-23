@@ -20,6 +20,7 @@ namespace MovimentacaoDeProduto.Controllers
         }
 
         // GET: api/produtos
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -33,7 +34,9 @@ namespace MovimentacaoDeProduto.Controllers
             });
         }
 
+
         // GET: api/produtos/1
+        //[Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -56,7 +59,10 @@ namespace MovimentacaoDeProduto.Controllers
             });
         }
 
+
+
         //POST: api/produtos
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ProdutoDTO dto)
         {
@@ -70,6 +76,7 @@ namespace MovimentacaoDeProduto.Controllers
             });
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] ProdutoDTO dto)
         {
@@ -92,6 +99,7 @@ namespace MovimentacaoDeProduto.Controllers
             });
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

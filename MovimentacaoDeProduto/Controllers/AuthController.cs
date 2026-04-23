@@ -23,7 +23,7 @@ namespace MovimentacaoDeProduto.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDTO login)
         {
-            // Simulação (depois você pode usar no banco)
+
             if (login.Email != "admin@email.com" || login.Senha != "123456")
                 return Unauthorized("Usuário ou senha inválidos");
             
@@ -45,7 +45,7 @@ namespace MovimentacaoDeProduto.Controllers
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Email, email)
+                    new Claim("email", email)
 
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
